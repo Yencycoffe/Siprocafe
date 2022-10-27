@@ -10,4 +10,21 @@ package siprocafe;
  */
 public class prueba {
     
+    
+    String usuario=null;
+    String password=null;
+    String rol=null;
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+    
 }
