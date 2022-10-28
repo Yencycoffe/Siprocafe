@@ -11,8 +11,9 @@ package siprocafe;
 public class inicalizacion {
 
     public static void main(String[] args) {
+        
         /**Se crea un objeto de tipo frmPersonal */
-       fm_usuario objetoFormulario =  new fm_usuario()  ;
+       fm_usuario objetoFormulario =  new fm_usuario();
       objetoFormulario.setVisible(true);
       
       }

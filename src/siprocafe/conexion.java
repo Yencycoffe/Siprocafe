@@ -29,11 +29,11 @@ public class conexion {
     /**
      * Se declaran las variables de acceso a la BD
      */
-    String usuario = "root@localhost";
+    String usuario = "root";
     String contrasena = "Karen1211";
     String bd = "emcafe";
     String ip = "localhost";
-    String puerto = "3307";
+    String puerto = "3306";
 
     /**
      * Se crea una variable tipo String para concatenar los datos de acceso a la BD
