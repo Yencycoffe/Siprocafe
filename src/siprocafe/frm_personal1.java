@@ -501,8 +501,7 @@ public class frm_personal1 extends javax.swing.JFrame {
 
     private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
         // TODO add your handling code here:
-         formulario_Principal formulario1=new formulario_Principal();
-        formulario1.setBounds(10,20,400,300);
+         frm_Menu_principal formulario1=new frm_Menu_principal();
         formulario1.setVisible(true);
         formulario1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
      
