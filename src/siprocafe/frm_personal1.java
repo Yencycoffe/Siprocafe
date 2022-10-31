@@ -72,7 +72,6 @@ public class frm_personal1 extends javax.swing.JFrame {
         tbtotalpersonas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 0));
 
@@ -87,7 +86,7 @@ public class frm_personal1 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(612, Short.MAX_VALUE))
+                .addContainerGap(557, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,57 +96,55 @@ public class frm_personal1 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 718, -1));
-
         jPanel2.setBackground(new java.awt.Color(153, 255, 153));
 
         jLabel2.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setText("Dirección");
-        jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel3.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setText("Nombre");
-        jLabel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel4.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setText("Apellido");
-        jLabel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jL.setBackground(new java.awt.Color(204, 204, 204));
+        jL.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jL.setText("Fecha_Nacimiento");
-        jL.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel6.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel6.setText("Fecha_Retiro");
-        jLabel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel7.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel7.setText("Fecha_Ingreso");
-        jLabel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel14.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel14.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel14.setText("Id_Personal");
-        jLabel14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel15.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel15.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel15.setText("Email");
-        jLabel15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel16.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel16.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel16.setText("Celular");
-        jLabel16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel17.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel17.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel17.setText("Eps");
-        jLabel17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel18.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel18.setText("Arls");
-        jLabel18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel19.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel19.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel19.setText("Estado");
-        jLabel19.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         texidp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -241,8 +238,8 @@ public class frm_personal1 extends javax.swing.JFrame {
         });
 
         jLabel20.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel20.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel20.setText("cargo");
-        jLabel20.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         texeps.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -259,6 +256,17 @@ public class frm_personal1 extends javax.swing.JFrame {
                 jBsalirActionPerformed(evt);
             }
         });
+
+        tbtotalpersonas.setBackground(new java.awt.Color(204, 204, 255));
+        tbtotalpersonas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane3.setViewportView(tbtotalpersonas);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -286,7 +294,7 @@ public class frm_personal1 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(274, 274, 274)
+                                .addGap(216, 216, 216)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGap(12, 12, 12)
@@ -310,7 +318,7 @@ public class frm_personal1 extends javax.swing.JFrame {
                                     .addComponent(TexFechanac, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
                                     .addComponent(TexFechaing)
                                     .addComponent(TexFEcharet))
-                                .addGap(94, 94, 94)
+                                .addGap(47, 47, 47)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel20)
                                     .addComponent(jLabel2))
@@ -329,6 +337,9 @@ public class frm_personal1 extends javax.swing.JFrame {
                         .addGap(25, 25, 25)
                         .addComponent(jBsalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(150, 150, 150))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -405,23 +416,26 @@ public class frm_personal1 extends javax.swing.JFrame {
                         .addComponent(jBguardar1)
                         .addGap(26, 26, 26)
                         .addComponent(jBeliminar)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 54, 718, -1));
-
-        tbtotalpersonas.setBackground(new java.awt.Color(204, 204, 255));
-        tbtotalpersonas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane3.setViewportView(tbtotalpersonas);
-
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 311, 718, 140));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 664, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -501,7 +515,7 @@ public class frm_personal1 extends javax.swing.JFrame {
 
     private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
         // TODO add your handling code here:
-         frm_Menu_principal formulario1=new frm_Menu_principal();
+         frm_Menu_Principal1 formulario1=new frm_Menu_Principal1();
         formulario1.setVisible(true);
         formulario1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
      

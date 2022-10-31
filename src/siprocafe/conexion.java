@@ -20,8 +20,8 @@ import java.time.*;
  * Aquí se realiza la conexión a la BD
  */
 public class conexion {
-
-    /**
+    
+      /**
      * Se declara una variable tipo Connection
      */
     Connection conectar = null;
@@ -70,5 +70,4 @@ public class conexion {
         return conectar;
 
     }
-
 }
