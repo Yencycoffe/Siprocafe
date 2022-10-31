@@ -255,7 +255,7 @@ public class fm_usuario extends javax.swing.JFrame {
         // TODO add your handling code here:
         
            Login objetoUsuario=new Login();
-        objetoUsuario.validarUsuario(jTusuario, jTusuario, JCRol);
+        objetoUsuario.validarUsuario(jTusuario, jTusuario, jTusuario, JCRol);
         
     }//GEN-LAST:event_accesoActionPerformed
 

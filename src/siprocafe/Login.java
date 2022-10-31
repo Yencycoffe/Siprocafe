@@ -29,9 +29,18 @@ public class Login {
 //    // Se define variables e incializamos variables
     
     String usuario=null;
+    int idPersonal;
     String password=null;
     String rol=null;
 
+    public int getIdPersonal() {
+        return idPersonal;
+    }
+
+    public void setIdPersonal(int idPersonal) {
+        this.idPersonal = idPersonal;
+    }
+    
     public String getUsuario() {
         return usuario;
     }
@@ -61,30 +70,31 @@ public class Login {
     conexion objetoconexion = new conexion();
 
     
-    public void InsertarUsuario( JTextField jTusuario,JTextField jPasswordusurio,JComboBox JCRol){
+    public void InsertarUsuario(JTextField jTidpersonal ,JTextField jTusuario,JTextField jTpossword,JComboBox JCRol){
 
         /*Se incorporan los valores de los controles*/
         
         setUsuario(jTusuario.getText());
-        setPassword(jPasswordusurio.getText());
+        setPassword(jTpossword.getText());
+        setIdPersonal(Integer.parseInt(jTidpersonal.getText()));
         setRol(JCRol.getSelectedItem().toString());
 
         /*Se crea una consulta para insertar los datos*/
         
-        String consulta = "INSERT INTO usuario ( Id_usuario, Possword, Rol) values (?,?,?)";
+        String consulta = "INSERT INTO usuario ( Id_usuario,Contraseña, Id_Personal, Rol) values (?,?,?,?)";
 
         try {
             /*Se enlaza la conexion con la consulta anterior*/
             
             CallableStatement cs;
             
-            cs = objetoconexion.conectar().prepareCall(consulta
-);
+            cs = objetoconexion.conectar().prepareCall(consulta);
             /*Se incorporan los parámetros*/
             
             cs.setString(1, getUsuario());
-            cs.setString(2, getUsuario());
-            cs.setString(3, getRol());
+            cs.setString(2, getPassword());
+            cs.setInt(3, getIdPersonal());
+            cs.setString(4, getRol());
             
             cs.executeUpdate();
 
@@ -95,86 +105,87 @@ public class Login {
         }
     }
         
-    public void MostrarPersonas(JTable tbtotalpersonas) {
-
-        /*Se crea un modelo de tabla*/
-
-        conexion objetoconexion = new conexion();
-        DefaultTableModel modelo = new DefaultTableModel();
-
-        /*Ordenar tabla*/
-        TableRowSorter<TableModel> OrdenarTabla = new TableRowSorter<TableModel>(modelo);
-        tbtotalpersonas.setRowSorter(OrdenarTabla);
-
-        String sql = " ";
-
-        /*Se crean los encabezados de las columnas*/
-        modelo.addColumn("Id_usuario");
-        modelo.addColumn("Possword");
-        modelo.addColumn("Rol");
-        
-
-        tbtotalpersonas.setModel(modelo);
-
-        sql = "select * from usuario;";
-        
-        /*Se crea un arreglo*/
-
-        String[] datos = new String[3];
-
-        java.sql.Statement st;
-
-        try {
-            st = objetoconexion.conectar().createStatement();
-            ResultSet rs = st.executeQuery(sql);
-
-            /*Se recorre el arreglo*/
-            while (rs.next()) {
-                datos[0] = rs.getString(1);
-                datos[1] = rs.getString(2);
-                datos[2] = rs.getString(3);
-                datos[3] = rs.getString(4);
-                
-
-                modelo.addRow(datos);
-
-            }
-
-            tbtotalpersonas.setModel(modelo);
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se pudo mostrar los registros, error: " + e.toString());
-
-        }
-}
+//    public void MostrarPersonas(JTable tbtotalpersonas) {
+//
+//        /*Se crea un modelo de tabla*/
+//
+//        conexion objetoconexion = new conexion();
+//        DefaultTableModel modelo = new DefaultTableModel();
+//
+//        /*Ordenar tabla*/
+//        TableRowSorter<TableModel> OrdenarTabla = new TableRowSorter<TableModel>(modelo);
+//        tbtotalpersonas.setRowSorter(OrdenarTabla);
+//
+//        String sql = " ";
+//
+//        /*Se crean los encabezados de las columnas*/
+//        modelo.addColumn("Id_usuario");
+//        modelo.addColumn("Possword");
+//        modelo.addColumn("Rol");
+//        
+//
+//        tbtotalpersonas.setModel(modelo);
+//
+//        sql = "select * from usuario;";
+//        
+//        /*Se crea un arreglo*/
+//
+//        String[] datos = new String[3];
+//
+//        java.sql.Statement st;
+//
+//        try {
+//            st = objetoconexion.conectar().createStatement();
+//            ResultSet rs = st.executeQuery(sql);
+//
+//            /*Se recorre el arreglo*/
+//            while (rs.next()) {
+//                datos[0] = rs.getString(1);
+//                datos[1] = rs.getString(2);
+//                datos[2] = rs.getString(3);
+//                datos[3] = rs.getString(4);
+//                
+//
+//                modelo.addRow(datos);
+//
+//            }
+//
+//            tbtotalpersonas.setModel(modelo);
+//
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, "No se pudo mostrar los registros, error: " + e.toString());
+//
+//        }
+//}
 
     /*Función para seleccionar un registro */
     
-    public void Seleccionarpersona(JTable tbtotalpersonas,JTextField jTusuario,JTextField jPasswordusurio,JComboBox JCRol) {
-
-        try {
-            int fila = tbtotalpersonas.getSelectedRow();
-
-            if (fila >= 0) {
-
-                jTusuario.setText((tbtotalpersonas.getValueAt(fila, 1).toString()));
-                jPasswordusurio.setText((tbtotalpersonas.getValueAt(fila, 2).toString()));
-                JCRol.setSelectedItem((tbtotalpersonas.getValueAt(fila, 3).toString()));
-                               
-
-            } else {
-                JOptionPane.showMessageDialog(null, "Fila no seleccionada");
-            }
-        } catch (Exception e) {
-
-            JOptionPane.showMessageDialog(null, "Error de seleccion, error: " + e.toString());
-        }
-
-    }
+//    public void Seleccionarpersona(JTextField jTidpersonal ,JTextField jTusuario,JTextField jTpossword,JComboBox JCRol) {
+//
+//        try {
+//            int fila = tbtotalpersonas.getSelectedRow();
+//
+//            if (fila >= 0) {
+//
+//                jTusuario.setText((tbtotalpersonas.getValueAt(fila, 1).toString()));
+//                jTpossword.setText((tbtotalpersonas.getValueAt(fila, 2).toString()));
+//                jTidpersonal.setText((tbtotalpersonas.getValueAt(fila, 3).toString()));
+//                JCRol.setSelectedItem((tbtotalpersonas.getValueAt(fila,4).toString()));
+//                               
+//
+//            } else {
+//                JOptionPane.showMessageDialog(null, "Fila no seleccionada");
+//            }
+//        } catch (Exception e) {
+//
+//            JOptionPane.showMessageDialog(null, "Error de seleccion, error: " + e.toString());
+//        }
+//
+//    }
 
     /*Función para modificar los datos de persona*/
     
-    public void ModificarPersonas(JTable tbtotalpersonas,JTextField jTusuario,JTextField jPasswordusurio,JComboBox JCRol) {
+    public void ModificarPersonas(JTextField jTidpersonal ,JTextField jTusuario,JTextField jTpossword,JComboBox JCRol) {
 
         /*Convierte de texto a int*/
         
@@ -183,12 +194,13 @@ public class Login {
         /*Toma los valores de texto*/
         
         setUsuario(jTusuario.getText());
-        setPassword(jPasswordusurio.getText());
+        setPassword(jTpossword.getText());
+        setIdPersonal(Integer.parseInt(jTidpersonal.getText()));
         setRol(JCRol.getSelectedItem().toString());
 
         conexion objetoconexion = new conexion();
 
-        String consulta = "UPDATE usuario SET usuario.Id_usuario = ?, usuario.Contraseña = ?, usuario.Rol = ? WHERE usuario.Id_usuario =?;";
+        String consulta = "UPDATE usuario SET usuario.Id_usuario = ?, usuario.Contraseña = ?, usuario.Id_Personal = ?usuario.Rol = ? WHERE usuario.Id_usuario =?;";
 
         try {
 
@@ -197,7 +209,8 @@ public class Login {
 //            cs.setInt(1, getId_personal());
             cs.setString(1, getUsuario());
             cs.setString(2, getPassword());
-            cs.setString(2, getRol());
+            cs.setInt(3, getIdPersonal());
+            cs.setString(4, getRol());
            
             cs.executeUpdate();
 
@@ -233,13 +246,13 @@ public class Login {
 
     }
     
-    public boolean validarUsuario(JTextField jTusuario, JTextField jPasswordusurio, JComboBox JCRol) {
+    public boolean validarUsuario(JTextField jTidpersonal ,JTextField jTusuario,JTextField jTpossword,JComboBox JCRol) {
     
         try {
             
             // Preparamos la consulta
             
-            String consulta =("SELECT * FROM usuarios WHERE usuario='" + jTusuario + "' AND password='" + jPasswordusurio + "' AND Rol='" + JCRol + "'");
+            String consulta =("SELECT * FROM usuarios WHERE usuario='" + jTusuario + "' AND password='" + jTidpersonal + "' AND Rol='" + JCRol + "'");
             
             CallableStatement cs;
             
@@ -247,28 +260,50 @@ public class Login {
 
             
             ResultSet resultadosConsulta = cs.executeQuery(consulta);
-
-            // si es valido el primer reg. hay una fila, tons el usuario y su pw existen
+             
+            cs.setString(1, usuario );
+             
+            // si es valido el primer reg. hay una fila,  el usuario y su pw existen
             
-            if (resultadosConsulta.first()) 
-            {
-                //usuario validado correctamente
-                return true;        
+            if (resultadosConsulta.next()) {
                 
-            } else {
-                
-                //usuario validado incorrectamente
-                return false;        
+                usuario = cs.getString(1);
+                password = cs.getString(2);
+                rol = cs.getString(3);
+                idPersonal = cs.getInt(4);
             }
+//            Administrador Sistema
+//            Administrador
+//            Usuario
+
+                // Si se ha obtenido un usuario y password y ademas esta es coincidente
+            if (jTusuario != null && password != null && password.equals(jTpossword)) {
+                if (JCRol != null) {
+                    if (JCRol.equals("Administrador Sistema")) {
+                        fm_usuario vm = new fm_usuario();
+//                        this.setVisible(false);
+                        
+                        vm.setVisible(true);
+                        
+                    } else if (JCRol.equals("Administrador")) {
+
+                    } else if (JCRol.equals("Usuario")) {
+
+                    }
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
+            }
+
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error " + e);
+        } finally {
             
-            e.printStackTrace();
-            return false;
-        }
-
+            return true;        
+                
+            }
     }
-
-  }
+}
 
 
 
