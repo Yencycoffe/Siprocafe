@@ -76,9 +76,6 @@ public class frm_Analisis_suelo extends javax.swing.JFrame {
         jLabel36 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jBconexion = new javax.swing.JButton();
-        jtsalir = new javax.swing.JButton();
         jSPelemdot = new javax.swing.JScrollPane();
         tbtotalpersonas = new javax.swing.JTable();
 
@@ -396,45 +393,6 @@ public class frm_Analisis_suelo extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jBconexion.setBackground(new java.awt.Color(204, 204, 204));
-        jBconexion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jBconexion.setText("Conexion");
-        jBconexion.setToolTipText("");
-        jBconexion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBconexionActionPerformed(evt);
-            }
-        });
-
-        jtsalir.setBackground(new java.awt.Color(204, 204, 204));
-        jtsalir.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jtsalir.setText("Salir");
-        jtsalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtsalirActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jBconexion)
-                .addGap(56, 56, 56)
-                .addComponent(jtsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBconexion, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtsalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-
         tbtotalpersonas.setBackground(new java.awt.Color(153, 153, 153));
         tbtotalpersonas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tabla Elementos de dotacion", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
         tbtotalpersonas.setModel(new javax.swing.table.DefaultTableModel(
@@ -453,7 +411,6 @@ public class frm_Analisis_suelo extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jSPelemdot, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -464,11 +421,8 @@ public class frm_Analisis_suelo extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSPelemdot, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addComponent(jSPelemdot, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE))
         );
 
         pack();
@@ -485,22 +439,6 @@ public class frm_Analisis_suelo extends javax.swing.JFrame {
     private void texid_personalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texid_personalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_texid_personalActionPerformed
-
-    private void jBconexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBconexionActionPerformed
-    
-    conexion mysql = new conexion();
-
-    mysql.conectar ();
-
-//    throw new UnsupportedOperationException("Not supported yet."); 
-// Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    
-    }//GEN-LAST:event_jBconexionActionPerformed
-
-    private void jtsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtsalirActionPerformed
-       /*Salir del programa*/
-        System.exit(0);      
-    }//GEN-LAST:event_jtsalirActionPerformed
 
     private void jBguardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardar1ActionPerformed
         // TODO add your handling code here:
@@ -565,7 +503,6 @@ public class frm_Analisis_suelo extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBconexion;
     private javax.swing.JButton jBeliminar;
     private javax.swing.JButton jBguardar1;
     private javax.swing.JButton jBmodificar;
@@ -584,9 +521,7 @@ public class frm_Analisis_suelo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel36;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jSPelemdot;
-    private javax.swing.JButton jtsalir;
     private javax.swing.JTable tbtotalpersonas;
     private javax.swing.JTextField texfecdevo;
     private javax.swing.JTextField texfecdevo1;

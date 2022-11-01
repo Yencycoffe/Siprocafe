@@ -10,12 +10,12 @@ package siprocafe;
  */
 public class Inicio {
     
-    public static void main(String[] args) {
+    public static void main(String [] args) {
 
        //Inicialización
 
-       /**Se crea un objeto de tipo frmPersonal */
-       
+       /**Se crea un objeto de tipo frmusuario */
+             
        fm_usuario objetoFormulario =  new fm_usuario();
       objetoFormulario.setVisible(true);
     }
