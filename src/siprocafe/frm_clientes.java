@@ -103,7 +103,7 @@ public class frm_clientes extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, -1));
 
-        jPanel2.setBackground(new java.awt.Color(102, 255, 102));
+        jPanel2.setBackground(new java.awt.Color(153, 255, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -293,7 +293,7 @@ public class frm_clientes extends javax.swing.JFrame {
         jPanel2.add(texemailempre, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 171, -1));
         jPanel2.add(texCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 171, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 52, 700, 330));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 52, 690, 330));
 
         tbtotalpersonas.setBackground(new java.awt.Color(204, 204, 255));
         tbtotalpersonas.setModel(new javax.swing.table.DefaultTableModel(

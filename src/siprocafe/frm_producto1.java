@@ -75,12 +75,12 @@ public class frm_producto1 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel2.setBackground(new java.awt.Color(153, 255, 153));
 
-        jLabel14.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel14.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel14.setText("Id_producto");
         jLabel14.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel14.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 204), new java.awt.Color(51, 204, 255), new java.awt.Color(153, 51, 255), new java.awt.Color(0, 102, 255)));
 
         texidproducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,50 +136,50 @@ public class frm_producto1 extends javax.swing.JFrame {
             }
         });
 
-        jLabel15.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel15.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel15.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel15.setText("tipo");
         jLabel15.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel15.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 204), new java.awt.Color(51, 204, 255), new java.awt.Color(153, 51, 255), new java.awt.Color(0, 102, 255)));
 
-        jLabel16.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel16.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel16.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel16.setText("Nombre");
         jLabel16.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel16.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 204), new java.awt.Color(51, 204, 255), new java.awt.Color(153, 51, 255), new java.awt.Color(0, 102, 255)));
 
-        jLabel17.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel17.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel17.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel17.setText("Fecha de ingreso");
         jLabel17.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel17.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 204), new java.awt.Color(51, 204, 255), new java.awt.Color(153, 51, 255), new java.awt.Color(0, 102, 255)));
 
-        jLabel18.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel18.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel18.setText("Fecha de recolección");
         jLabel18.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel18.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 204), new java.awt.Color(51, 204, 255), new java.awt.Color(153, 51, 255), new java.awt.Color(0, 102, 255)));
 
-        jLabel19.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel19.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel19.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel19.setText("tiempo final lavado");
         jLabel19.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel19.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 204), new java.awt.Color(51, 204, 255), new java.awt.Color(153, 51, 255), new java.awt.Color(0, 102, 255)));
 
-        jLabel20.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel20.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel20.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel20.setText("Cantidad");
         jLabel20.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel20.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 204), new java.awt.Color(51, 204, 255), new java.awt.Color(153, 51, 255), new java.awt.Color(0, 102, 255)));
 
-        jLabel21.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel21.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel21.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel21.setText("Tiempo inicial lavado");
         jLabel21.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel21.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 204), new java.awt.Color(51, 204, 255), new java.awt.Color(153, 51, 255), new java.awt.Color(0, 102, 255)));
 
-        jLabel22.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel22.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel22.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel22.setText("Fecha de lavado");
         jLabel22.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel22.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 204), new java.awt.Color(51, 204, 255), new java.awt.Color(153, 51, 255), new java.awt.Color(0, 102, 255)));
 
-        jLabel23.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel23.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel23.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel23.setText("Numero secadero");
         jLabel23.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel23.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 204), new java.awt.Color(51, 204, 255), new java.awt.Color(153, 51, 255), new java.awt.Color(0, 102, 255)));
 
         textiempo_inicial_lavado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,49 +211,57 @@ public class frm_producto1 extends javax.swing.JFrame {
             }
         });
 
-        jLabel24.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel24.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel24.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel24.setText("Clasificaciòn");
         jLabel24.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel24.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 204), new java.awt.Color(51, 204, 255), new java.awt.Color(153, 51, 255), new java.awt.Color(0, 102, 255)));
 
+        texclasificacion.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        texclasificacion.setBorder(null);
         texclasificacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 texclasificacionActionPerformed(evt);
             }
         });
 
-        jLabel25.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel25.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel25.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel25.setText("Orden Venta");
         jLabel25.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel25.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 204), new java.awt.Color(51, 204, 255), new java.awt.Color(153, 51, 255), new java.awt.Color(0, 102, 255)));
 
+        texorden_venta.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        texorden_venta.setBorder(null);
         texorden_venta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 texorden_ventaActionPerformed(evt);
             }
         });
 
-        jLabel26.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel26.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel26.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel26.setText("Id_Factura");
         jLabel26.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel26.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 204), new java.awt.Color(51, 204, 255), new java.awt.Color(153, 51, 255), new java.awt.Color(0, 102, 255)));
 
+        texid_factura.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        texid_factura.setBorder(null);
         texid_factura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 texid_facturaActionPerformed(evt);
             }
         });
 
+        texid_personal.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        texid_personal.setBorder(null);
         texid_personal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 texid_personalActionPerformed(evt);
             }
         });
 
-        jLabel27.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel27.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel27.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel27.setText("Id_Personal");
         jLabel27.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel27.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 51, 204), new java.awt.Color(51, 204, 255), new java.awt.Color(153, 51, 255), new java.awt.Color(0, 102, 255)));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -328,7 +336,7 @@ public class frm_producto1 extends javax.swing.JFrame {
                             .addComponent(texfecha_de_lavado, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textiempo_inicial_lavado, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(texid_factura, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -404,7 +412,7 @@ public class frm_producto1 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 51));
 
         jLabel1.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -499,7 +507,7 @@ public class frm_producto1 extends javax.swing.JFrame {
                 .addComponent(jSPelemdot, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();

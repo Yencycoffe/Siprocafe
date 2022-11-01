@@ -17,7 +17,6 @@ public class fm_registrousuarios extends javax.swing.JInternalFrame {
         initComponents();
         
         
-        Login objetologin = new Login();
         }
 
     /**
@@ -104,6 +103,11 @@ public class fm_registrousuarios extends javax.swing.JInternalFrame {
 
         jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton1.setText("Cancelar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton2.setText("Registrar");
@@ -238,8 +242,16 @@ public class fm_registrousuarios extends javax.swing.JInternalFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        Login objetolog=new Login();
+         objetolog.InsertarUsuario(jTidpersonal, jTusuario, jTpossword, JCRol);
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        frm_Menu_Principal1 verformulario= new frm_Menu_Principal1();
+        verformulario.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
