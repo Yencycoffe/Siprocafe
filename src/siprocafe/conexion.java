@@ -21,6 +21,9 @@ import java.time.*;
  */
 public class conexion {
     
+    public Connection conexion;
+    public Statement sentencia;
+    public ResultSet resultado;
       /**
      * Se declara una variable tipo Connection
      */
@@ -70,4 +73,5 @@ public class conexion {
         return conectar;
 
     }
+
 }
