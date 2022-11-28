@@ -4,6 +4,9 @@
  */
 package siprocafe;
 
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Karen Yency Pinedo
@@ -15,12 +18,9 @@ public class Principal {
      */
     public static void main(String[] args) {
         
-        
-        
-        
-             
-     
-        
+              
     }
+    
+    
     
 }

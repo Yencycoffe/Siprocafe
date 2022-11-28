@@ -21,6 +21,9 @@ import java.time.*;
  */
 public class conexion {
     
+    public Connection conexion;
+    public Statement sentencia;
+    public ResultSet resultado;
       /**
      * Se declara una variable tipo Connection
      */
@@ -58,7 +61,7 @@ public class conexion {
             /**
              * Muestra ventana con mensaje de conexión exitosa
              */
-            //OJO! Este se activa para verificar
+//            //OJO! Este se activa para verificar
             JOptionPane.showMessageDialog(null, "Conexión exitosa a la BD: " + bd, "Ejemplo conexión a BD", JOptionPane.INFORMATION_MESSAGE);
 
         } catch (ClassNotFoundException | SQLException e) {
@@ -70,4 +73,5 @@ public class conexion {
         return conectar;
 
     }
-}
+
+   }

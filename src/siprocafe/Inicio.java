@@ -9,14 +9,14 @@ package siprocafe;
  * @author USER
  */
 public class Inicio {
-    
-    public static void main(String [] args) {
+       
+    public static void main(String[] args) {
 
        //Inicialización
 
        /**Se crea un objeto de tipo frmusuario */
              
-       fm_usuario objetoFormulario =  new fm_usuario();
+       frm_usuario1 objetoFormulario =  new frm_usuario1();
       objetoFormulario.setVisible(true);
     }
      

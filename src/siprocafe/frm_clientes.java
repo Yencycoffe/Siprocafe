@@ -27,9 +27,9 @@ public class frm_clientes extends javax.swing.JFrame {
         objetoconexion.conectar();
         */
      
-     clientes objetocliente = new clientes();
-     objetocliente.MostrarPersonas(tbtotalpersonas);
-     
+//     clientes objetocliente = new clientes();
+//     objetocliente.MostrarPersonas(tbtotalpersonas);
+//     
     }
 
     @SuppressWarnings("unchecked")
@@ -72,11 +72,11 @@ public class frm_clientes extends javax.swing.JFrame {
         TexNitempre = new javax.swing.JTextField();
         texemailempre = new javax.swing.JTextField();
         texCargo = new javax.swing.JTextField();
+        salir = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbtotalpersonas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 0));
 
@@ -100,8 +100,6 @@ public class frm_clientes extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, -1));
 
         jPanel2.setBackground(new java.awt.Color(153, 255, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -206,7 +204,7 @@ public class frm_clientes extends javax.swing.JFrame {
         });
         jPanel2.add(texcel, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 234, 163, -1));
 
-        jBguardar1.setBackground(new java.awt.Color(204, 204, 204));
+        jBguardar1.setBackground(new java.awt.Color(0, 153, 153));
         jBguardar1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jBguardar1.setText("Guardar");
         jBguardar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -217,7 +215,7 @@ public class frm_clientes extends javax.swing.JFrame {
         });
         jPanel2.add(jBguardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, -1, -1));
 
-        jBeliminar.setBackground(new java.awt.Color(204, 204, 204));
+        jBeliminar.setBackground(new java.awt.Color(0, 153, 153));
         jBeliminar.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jBeliminar.setText("Eliminar");
         jBeliminar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -244,7 +242,7 @@ public class frm_clientes extends javax.swing.JFrame {
         });
         jPanel2.add(jComboBoxestado, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, 163, -1));
 
-        jBmodificar1.setBackground(new java.awt.Color(204, 204, 204));
+        jBmodificar1.setBackground(new java.awt.Color(0, 153, 153));
         jBmodificar1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jBmodificar1.setText("Actualizar");
         jBmodificar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -293,7 +291,16 @@ public class frm_clientes extends javax.swing.JFrame {
         jPanel2.add(texemailempre, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 171, -1));
         jPanel2.add(texCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 171, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 52, 690, 330));
+        salir.setBackground(new java.awt.Color(0, 153, 153));
+        salir.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        salir.setText("Salir");
+        salir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirActionPerformed(evt);
+            }
+        });
+        jPanel2.add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 80, -1));
 
         tbtotalpersonas.setBackground(new java.awt.Color(204, 204, 255));
         tbtotalpersonas.setModel(new javax.swing.table.DefaultTableModel(
@@ -306,17 +313,36 @@ public class frm_clientes extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(tbtotalpersonas);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 690, 180));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBmodificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBmodificar1ActionPerformed
         // TODO add your handling code here:
-        clientes objetoclientes=new clientes();
-        objetoclientes.ModificarPersonas(texidc, texnombre, texapellido, TexFechanac, TexFechaing, texdirec, texemail, texcel, TexNomempre, TexNitempre, texemailempre,texCargo, jComboBoxestado, texidFactura, texIdpersonal);
-        /*Actualiza los datos y muestra*/
-        objetoclientes.MostrarPersonas(tbtotalpersonas);
+//        clientes objetoclientes=new clientes();
+//        objetoclientes.ModificarPersonas(texidc, texnombre, texapellido, TexFechanac, TexFechaing, texdirec, texemail, texcel, TexNomempre, TexNitempre, texemailempre,texCargo, jComboBoxestado, texidFactura, texIdpersonal);
+//        /*Actualiza los datos y muestra*/
+//        objetoclientes.MostrarPersonas(tbtotalpersonas);
     }//GEN-LAST:event_jBmodificar1ActionPerformed
 
     private void jComboBoxestadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxestadoActionPerformed
@@ -329,19 +355,19 @@ public class frm_clientes extends javax.swing.JFrame {
 
     private void jBeliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarActionPerformed
         // TODO add your handling code here:
-        clientes objetocliente=new clientes();
-        objetocliente.EliminarPersonas(texidc);
-        /*Actualiza los datos y muestra*/
-        objetocliente.MostrarPersonas(tbtotalpersonas);
+//        clientes objetocliente=new clientes();
+//        objetocliente.EliminarPersonas(texidc);
+//        /*Actualiza los datos y muestra*/
+//        objetocliente.MostrarPersonas(tbtotalpersonas);
     }//GEN-LAST:event_jBeliminarActionPerformed
 
     private void jBguardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardar1ActionPerformed
         // TODO add your handling code here:
-        clientes objetoClientes = new clientes();
-        objetoClientes.InsertarPersonas(texidc, texnombre, texapellido, TexFechanac, TexFechaing, texdirec, texemail, texcel, TexNomempre, TexNitempre, texemailempre, texCargo, jComboBoxestado, texidFactura, texIdpersonal);
-        /*Actualiza los datos y muestra*/
-
-        objetoClientes.MostrarPersonas(tbtotalpersonas);
+//        clientes objetoClientes = new clientes();
+//        objetoClientes.InsertarPersonas(texidc, texnombre, texapellido, TexFechanac, TexFechaing, texdirec, texemail, texcel, TexNomempre, TexNitempre, texemailempre, texCargo, jComboBoxestado, texidFactura, texIdpersonal);
+//        /*Actualiza los datos y muestra*/
+//
+//        objetoClientes.MostrarPersonas(tbtotalpersonas);
     }//GEN-LAST:event_jBguardar1ActionPerformed
 
     private void texcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texcelActionPerformed
@@ -376,6 +402,14 @@ public class frm_clientes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_texidFacturaActionPerformed
 
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
+
+        frm_Menu_Principal_1 form =new frm_Menu_Principal_1();
+        form.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_salirActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField TexFechaing;
@@ -405,6 +439,7 @@ public class frm_clientes extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JButton salir;
     private javax.swing.JTable tbtotalpersonas;
     private javax.swing.JTextField texCargo;
     private javax.swing.JTextField texIdpersonal;
