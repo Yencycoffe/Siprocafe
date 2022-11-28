@@ -16,6 +16,8 @@ public class frm_pagos extends javax.swing.JFrame {
     public frm_pagos() {
         initComponents();
         
+        Pago objetopPago = new Pago();
+        objetopPago.MostrarPersonas(tbtotalpersonas);
         
     }
 
@@ -33,37 +35,24 @@ public class frm_pagos extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        texidelem_dot = new javax.swing.JTextField();
-        texid_producto = new javax.swing.JTextField();
+        texidpagos = new javax.swing.JTextField();
+        texid_bloque = new javax.swing.JTextField();
         texid_personal = new javax.swing.JTextField();
         jBguardar1 = new javax.swing.JButton();
         jBmodificar = new javax.swing.JButton();
         jBeliminar = new javax.swing.JButton();
-        texfecdevo = new javax.swing.JTextField();
-        texfecdevo1 = new javax.swing.JTextField();
-        texid_personal1 = new javax.swing.JTextField();
-        texfecdevo2 = new javax.swing.JTextField();
-        texid_personal2 = new javax.swing.JTextField();
-        texfecdevo3 = new javax.swing.JTextField();
-        texid_personal3 = new javax.swing.JTextField();
-        texfecdevo4 = new javax.swing.JTextField();
-        texid_personal4 = new javax.swing.JTextField();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
+        texvalorpago = new javax.swing.JTextField();
+        texid_usuario = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jBmodificar1 = new javax.swing.JButton();
+        jBsalir = new javax.swing.JButton();
         jSPelemdot = new javax.swing.JScrollPane();
         tbtotalpersonas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -78,9 +67,9 @@ public class frm_pagos extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(100, 100, 100)
+                .addGap(38, 38, 38)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(382, Short.MAX_VALUE))
+                .addContainerGap(444, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,30 +86,30 @@ public class frm_pagos extends javax.swing.JFrame {
 
         jLabel14.setBackground(new java.awt.Color(255, 255, 255));
         jLabel14.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel14.setText("Id_Analisis Suelo");
+        jLabel14.setText("Id Pagos");
         jLabel14.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jPanel7.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 110, -1));
 
-        texidelem_dot.addActionListener(new java.awt.event.ActionListener() {
+        texidpagos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                texidelem_dotActionPerformed(evt);
+                texidpagosActionPerformed(evt);
             }
         });
-        jPanel7.add(texidelem_dot, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 87, -1));
+        jPanel7.add(texidpagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 87, -1));
 
-        texid_producto.addActionListener(new java.awt.event.ActionListener() {
+        texid_bloque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                texid_productoActionPerformed(evt);
+                texid_bloqueActionPerformed(evt);
             }
         });
-        jPanel7.add(texid_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 171, -1));
+        jPanel7.add(texid_bloque, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 171, -1));
 
         texid_personal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 texid_personalActionPerformed(evt);
             }
         });
-        jPanel7.add(texid_personal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 171, -1));
+        jPanel7.add(texid_personal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 171, -1));
 
         jBguardar1.setBackground(new java.awt.Color(0, 153, 153));
         jBguardar1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
@@ -131,7 +120,7 @@ public class frm_pagos extends javax.swing.JFrame {
                 jBguardar1ActionPerformed(evt);
             }
         });
-        jPanel7.add(jBguardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 259, -1, -1));
+        jPanel7.add(jBguardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, -1));
 
         jBmodificar.setBackground(new java.awt.Color(0, 153, 153));
         jBmodificar.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
@@ -142,7 +131,7 @@ public class frm_pagos extends javax.swing.JFrame {
                 jBmodificarActionPerformed(evt);
             }
         });
-        jPanel7.add(jBmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 259, -1, -1));
+        jPanel7.add(jBmodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
 
         jBeliminar.setBackground(new java.awt.Color(0, 153, 153));
         jBeliminar.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
@@ -153,149 +142,58 @@ public class frm_pagos extends javax.swing.JFrame {
                 jBeliminarActionPerformed(evt);
             }
         });
-        jPanel7.add(jBeliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(311, 259, -1, -1));
+        jPanel7.add(jBeliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, -1, -1));
 
-        texfecdevo.addActionListener(new java.awt.event.ActionListener() {
+        texvalorpago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                texfecdevoActionPerformed(evt);
+                texvalorpagoActionPerformed(evt);
             }
         });
-        jPanel7.add(texfecdevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 124, -1));
+        jPanel7.add(texvalorpago, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 171, -1));
 
-        texfecdevo1.addActionListener(new java.awt.event.ActionListener() {
+        texid_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                texfecdevo1ActionPerformed(evt);
+                texid_usuarioActionPerformed(evt);
             }
         });
-        jPanel7.add(texfecdevo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, 124, -1));
-
-        texid_personal1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                texid_personal1ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(texid_personal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 171, -1));
-
-        texfecdevo2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                texfecdevo2ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(texfecdevo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, 124, -1));
-
-        texid_personal2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                texid_personal2ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(texid_personal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 171, -1));
-
-        texfecdevo3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                texfecdevo3ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(texfecdevo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, 124, -1));
-
-        texid_personal3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                texid_personal3ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(texid_personal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 171, -1));
-
-        texfecdevo4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                texfecdevo4ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(texfecdevo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 124, -1));
-
-        texid_personal4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                texid_personal4ActionPerformed(evt);
-            }
-        });
-        jPanel7.add(texid_personal4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 500, 40));
-
-        jLabel26.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel26.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel26.setText("Fecha Muestra");
-        jLabel26.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel7.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
-
-        jLabel27.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel27.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel27.setText("Fecha Analisis");
-        jLabel27.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel7.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+        jPanel7.add(texid_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 171, -1));
 
         jLabel28.setBackground(new java.awt.Color(255, 255, 255));
         jLabel28.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel28.setText("Fecha Reporte");
+        jLabel28.setText("Valor pagos");
         jLabel28.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jPanel7.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         jLabel29.setBackground(new java.awt.Color(255, 255, 255));
         jLabel29.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel29.setText("Determinación");
+        jLabel29.setText("id usuario");
         jLabel29.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel7.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
-
-        jLabel30.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel30.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel30.setText("Resultado");
-        jLabel30.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel7.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, -1));
-
-        jLabel31.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel31.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel31.setText("Recomendación");
-        jLabel31.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel7.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 213, -1, -1));
-
-        jLabel32.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel32.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel32.setText("Edad Cultivo");
-        jLabel32.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel7.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, -1, -1));
+        jPanel7.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, -1));
 
         jLabel33.setBackground(new java.awt.Color(255, 255, 255));
         jLabel33.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel33.setText("Id Producto");
+        jLabel33.setText("Id bloques ");
         jLabel33.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel7.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, -1, -1));
+        jPanel7.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
         jLabel34.setBackground(new java.awt.Color(255, 255, 255));
         jLabel34.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel34.setText("Id Personal");
         jLabel34.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel7.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, -1, -1));
+        jPanel7.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
-        jLabel35.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel35.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel35.setText("Metodo");
-        jLabel35.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel7.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, -1, -1));
-
-        jLabel36.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel36.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel36.setText("Rango_Adeciado");
-        jLabel36.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel7.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, -1, -1));
-
-        jBmodificar1.setBackground(new java.awt.Color(0, 153, 153));
-        jBmodificar1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jBmodificar1.setText("Salir");
-        jBmodificar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jBmodificar1.addActionListener(new java.awt.event.ActionListener() {
+        jBsalir.setBackground(new java.awt.Color(0, 153, 153));
+        jBsalir.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jBsalir.setText("Salir");
+        jBsalir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jBsalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBmodificar1ActionPerformed(evt);
+                jBsalirActionPerformed(evt);
             }
         });
-        jPanel7.add(jBmodificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, 70, -1));
+        jPanel7.add(jBsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 70, -1));
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 46, 650, 300));
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 650, 220));
 
         tbtotalpersonas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tabla Elementos de dotacion", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
         tbtotalpersonas.setModel(new javax.swing.table.DefaultTableModel(
@@ -308,29 +206,20 @@ public class frm_pagos extends javax.swing.JFrame {
         ));
         jSPelemdot.setViewportView(tbtotalpersonas);
 
-        jPanel1.add(jSPelemdot, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 650, 210));
+        jPanel1.add(jSPelemdot, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 650, 210));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void texidelem_dotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texidelem_dotActionPerformed
+    private void texidpagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texidpagosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_texidelem_dotActionPerformed
+    }//GEN-LAST:event_texidpagosActionPerformed
 
-    private void texid_productoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texid_productoActionPerformed
+    private void texid_bloqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texid_bloqueActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_texid_productoActionPerformed
+    }//GEN-LAST:event_texid_bloqueActionPerformed
 
     private void texid_personalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texid_personalActionPerformed
         // TODO add your handling code here:
@@ -338,63 +227,50 @@ public class frm_pagos extends javax.swing.JFrame {
 
     private void jBguardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardar1ActionPerformed
         // TODO add your handling code here:
+        
+        Pago objetopPago = new Pago();
+        objetopPago.InsertarPersonas(texidpagos, texid_personal, texid_bloque, texvalorpago, texid_usuario);
+        objetopPago.MostrarPersonas(tbtotalpersonas);
+        objetopPago.Seleccionarpersona(tbtotalpersonas, texidpagos, texid_personal, texid_bloque, texvalorpago, texid_usuario);
+        
     }//GEN-LAST:event_jBguardar1ActionPerformed
 
     private void jBmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBmodificarActionPerformed
         // TODO add your handling code here:
+        
+        Pago objetopPago = new Pago();
+        objetopPago.ActualizarPersonas(texidpagos, texid_personal, texid_bloque, texvalorpago, texid_usuario);
+        
+        objetopPago.MostrarPersonas(tbtotalpersonas);
+        
     }//GEN-LAST:event_jBmodificarActionPerformed
 
     private void jBeliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarActionPerformed
         // TODO add your handling code here:
+        Pago objetopPago = new Pago();
+        objetopPago.EliminarPersonas(tbtotalpersonas, texidpagos);
+        objetopPago.MostrarPersonas(tbtotalpersonas);
+        
     }//GEN-LAST:event_jBeliminarActionPerformed
 
-    private void texfecdevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texfecdevoActionPerformed
+    private void texvalorpagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texvalorpagoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_texfecdevoActionPerformed
+    }//GEN-LAST:event_texvalorpagoActionPerformed
 
-    private void texfecdevo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texfecdevo1ActionPerformed
+    private void texid_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texid_usuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_texfecdevo1ActionPerformed
+    }//GEN-LAST:event_texid_usuarioActionPerformed
 
-    private void texid_personal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texid_personal1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_texid_personal1ActionPerformed
-
-    private void texfecdevo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texfecdevo2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_texfecdevo2ActionPerformed
-
-    private void texid_personal2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texid_personal2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_texid_personal2ActionPerformed
-
-    private void texfecdevo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texfecdevo3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_texfecdevo3ActionPerformed
-
-    private void texid_personal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texid_personal3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_texid_personal3ActionPerformed
-
-    private void texfecdevo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texfecdevo4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_texfecdevo4ActionPerformed
-
-    private void texid_personal4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texid_personal4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_texid_personal4ActionPerformed
-
-    private void jBmodificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBmodificar1ActionPerformed
+    private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
+       
         frm_Menu_Principal_1 form =new frm_Menu_Principal_1();
         form.setVisible(true);
         this.setVisible(false);
         
 //        System.exit(0);
 
+    }//GEN-LAST:event_jBsalirActionPerformed
 
-    }//GEN-LAST:event_jBmodificar1ActionPerformed
-
-    
     /**
      * @param args the command line arguments
      */
@@ -434,45 +310,23 @@ public class frm_pagos extends javax.swing.JFrame {
     private javax.swing.JButton jBeliminar;
     private javax.swing.JButton jBguardar1;
     private javax.swing.JButton jBmodificar;
-    private javax.swing.JButton jBmodificar1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jBsalir;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jSPelemdot;
     private javax.swing.JTable tbtotalpersonas;
-    private javax.swing.JTextField texfecdevo;
-    private javax.swing.JTextField texfecdevo1;
-    private javax.swing.JTextField texfecdevo2;
-    private javax.swing.JTextField texfecdevo3;
-    private javax.swing.JTextField texfecdevo4;
+    private javax.swing.JTextField texid_bloque;
     private javax.swing.JTextField texid_personal;
-    private javax.swing.JTextField texid_personal1;
-    private javax.swing.JTextField texid_personal2;
-    private javax.swing.JTextField texid_personal3;
-    private javax.swing.JTextField texid_personal4;
-    private javax.swing.JTextField texid_producto;
-    private javax.swing.JTextField texidelem_dot;
+    private javax.swing.JTextField texid_usuario;
+    private javax.swing.JTextField texidpagos;
+    private javax.swing.JTextField texvalorpago;
     // End of variables declaration//GEN-END:variables
 
    

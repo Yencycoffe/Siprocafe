@@ -4,6 +4,7 @@
  */
 package siprocafe;
 
+
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.sql.CallableStatement;
@@ -25,6 +26,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Formatter;
 import java.util.Calendar;
 import javax.swing.JComboBox;
+
 
 public class Personal {
     
@@ -48,6 +50,7 @@ public class Personal {
      * Area Getters y Setters Get: obtiene el valor Set: incorpora el valor
      *
      */
+    
     public String getFecha_nacimiento()  {
         return Fecha_nacimiento;
     }
@@ -91,7 +94,6 @@ public class Personal {
     public String getApellido() {
         return Apellido;
     }
-
     public void setApellido(String Apellido) {
         this.Apellido = Apellido;
     }
@@ -155,6 +157,7 @@ public class Personal {
             JTextField texdirec, JTextField texemail, JTextField texcel, JTextField texeps, JTextField texcargo,JTextField texarls, JComboBox jComboBoxestado) {
 
         /*Se incorporan los valores de los controles*/
+        
         setId_personal(Integer.parseInt(texidp.getText()));
         setNombre(texnombre.getText());
         setApellido(texapellido.getText());
@@ -171,11 +174,13 @@ public class Personal {
 
 //          Se crea objeto de tipo conexion  
         
-conexion objetoconexion = new conexion();
+        conexion objetoconexion = new conexion();
 
         /*Se crea una consulta para insertar los datos*/
         
-        String consulta = "INSERT INTO Personal ( Id_Personal, Nombre, Apellido,Fecha_nacimiento,Fecha_ingreso,Dirección,Email, Fecha_retiro, celular,Eps,Arls,Estado, Cargo) values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String consulta = "INSERT INTO Personal ( Id_Personal, Nombre, Apellido,Fecha_nacimiento,"
+                + "Fecha_ingreso,Dirección,Email, Fecha_retiro, celular,Eps,Arls,Estado, Cargo) "
+                + "values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
         try {
             /*Se enlaza la conexion con la consulta anterior*/
@@ -288,19 +293,19 @@ conexion objetoconexion = new conexion();
 
             if (fila >= 0) {
 
-                texidp.setText((tbtotalpersonas.getValueAt(fila, 1).toString()));
-                texnombre.setText((tbtotalpersonas.getValueAt(fila, 2).toString()));
-                texapellido.setText((tbtotalpersonas.getValueAt(fila, 3).toString()));
-                TexFechanac.setText((tbtotalpersonas).getValueAt(fila, 4).toString());
-                TexFechaing.setText((tbtotalpersonas).getValueAt(fila, 5).toString());
-                texdirec.setText((tbtotalpersonas.getValueAt(fila, 6).toString()));
-                texemail.setText((tbtotalpersonas.getValueAt(fila, 7).toString()));
-                TexFecharet.setText((tbtotalpersonas.getValueAt(fila, 8).toString()));
-                texcel.setText((tbtotalpersonas.getValueAt(fila, 9).toString()));
-                texeps.setText((tbtotalpersonas.getValueAt(fila, 10).toString()));
-                texarls.setText((tbtotalpersonas.getValueAt(fila, 11).toString()));
-                jComboBoxestado.setSelectedItem((tbtotalpersonas.getValueAt(fila, 12).toString()));
-                texcargo.setText((tbtotalpersonas.getValueAt(fila, 13).toString()));
+                texidp.setText((tbtotalpersonas.getValueAt(fila, 0).toString()));
+                texnombre.setText((tbtotalpersonas.getValueAt(fila, 1).toString()));
+                texapellido.setText((tbtotalpersonas.getValueAt(fila, 2).toString()));
+                TexFechanac.setText((tbtotalpersonas).getValueAt(fila, 3).toString());
+                TexFechaing.setText((tbtotalpersonas).getValueAt(fila, 4).toString());
+                texdirec.setText((tbtotalpersonas.getValueAt(fila, 5).toString()));
+                texemail.setText((tbtotalpersonas.getValueAt(fila, 6).toString()));
+                TexFecharet.setText((tbtotalpersonas.getValueAt(fila, 7).toString()));
+                texcel.setText((tbtotalpersonas.getValueAt(fila, 8).toString()));
+                texeps.setText((tbtotalpersonas.getValueAt(fila, 9).toString()));
+                texarls.setText((tbtotalpersonas.getValueAt(fila, 10).toString()));
+                jComboBoxestado.setSelectedItem((tbtotalpersonas.getValueAt(fila, 11).toString()));
+                texcargo.setText((tbtotalpersonas.getValueAt(fila, 12).toString()));
 
             } else {
                 JOptionPane.showMessageDialog(null, "Fila no seleccionada");
@@ -314,7 +319,7 @@ conexion objetoconexion = new conexion();
 
     /*Función para modificar los datos de persona*/
     
-    public void ModificarPersonas(JTextField texnombre, JTextField texidp, JTextField texapellido, JTextField TexFechanac, JTextField TexFechaing, JTextField TexFecharet,
+    public void ActualizarPersonas(JTable tbtotalpersonas, JTextField texnombre, JTextField texidp, JTextField texapellido, JTextField TexFechanac, JTextField TexFechaing, JTextField TexFecharet,
             JTextField texdirec, JTextField texemail, JTextField texcel, JTextField texeps, JTextField texarls, JComboBox jComboBoxestado,JTextField texcargo) {
 
         /*Convierte de texto a int*/
@@ -344,21 +349,22 @@ conexion objetoconexion = new conexion();
 
             CallableStatement cs = objetoconexion.conectar().prepareCall(consulta);
 
-            cs.setInt(1, getId_personal());
-            cs.setString(2, getNombre());
-            cs.setString(3, getApellido());
-            cs.setString(4, getFecha_nacimiento());
-            cs.setString(5, getFecha_ingreso());
-            cs.setString(6, getDireccion());
-            cs.setString(7, getEmail());
-            cs.setString(8, getFecha_retiro());
-            cs.setString(9, getcelular());
-            cs.setString(10, getEps());
-            cs.setString(11, getArls());
-            cs.setString(12, getEstado());
-            cs.setString(13, getCargo());
+            
+            cs.setString(1, getNombre());
+            cs.setString(2, getApellido());
+            cs.setString(3, getFecha_nacimiento());
+            cs.setString(4, getFecha_ingreso());
+            cs.setString(5, getDireccion());
+            cs.setString(6, getEmail());
+            cs.setString(7, getFecha_retiro());
+            cs.setString(8, getcelular());
+            cs.setString(9, getEps());
+            cs.setString(10, getArls());
+            cs.setString(11, getEstado());
+            cs.setString(12, getCargo());
+            cs.setInt(13, getId_personal());
 
-            cs.executeUpdate();
+            cs.execute();
 
             JOptionPane.showMessageDialog(null, "Modificación exitosa");
 
@@ -369,14 +375,14 @@ conexion objetoconexion = new conexion();
 
     }
 
-    public void EliminarPersonas(JTextField texidp) {
+    public void EliminarPersonas(JTable tbtotalpersonas, JTextField texidp) {
 
         /*Convertir la cadena a Integer*/
         setId_personal(Integer.parseInt(texidp.getText()));
 
         conexion objetoconexion = new conexion();
 
-        String consulta = "DELETE FROM personal WHERE personal.Id_personal=?;";
+        String consulta = "DELETE FROM personal WHERE personal.Id_Personal=?;";
 
         try {
             CallableStatement cs = objetoconexion.conectar().prepareCall(consulta);
@@ -391,6 +397,71 @@ conexion objetoconexion = new conexion();
         }
 
     }
-    
-}
 
+    public void ConsultaPersonas(JTable tbtotalpersonas,JTextField id) {
+        
+         conexion objetoconexion = new conexion();
+
+         String consulta ="SELECT * FROM `personal`";
+        
+
+         try {
+                  
+              Statement cs = objetoconexion.conectar().createStatement();
+                 
+              ResultSet rs = cs.executeQuery(consulta);
+               /*Convertir la cadena a Integer*/
+              setId_personal(Integer.parseInt(id.getText()));
+              
+              DefaultTableModel modelo = new DefaultTableModel();
+              JTable tabla = new JTable(modelo);
+              
+                      /*Se crean los encabezados de las columnas*/
+                    modelo.addColumn("Id_personal");
+                    modelo.addColumn("Nombre");
+                    modelo.addColumn("Apellido");
+                    modelo.addColumn("Fecha_nacimiento");
+                    modelo.addColumn("Fecha_ingreso");
+                    modelo.addColumn("Direccion");
+                    modelo.addColumn("Email");
+                    modelo.addColumn("Fecha_retiro");
+                    modelo.addColumn("celular");
+                    modelo.addColumn("Eps");
+                    modelo.addColumn("Arls");
+                    modelo.addColumn("Estado");
+                    modelo.addColumn("Cargo");
+
+            tbtotalpersonas.setModel(modelo);
+            
+            /*Se crea un arreglo*/
+
+            String[] datos = new String[13];
+
+   
+              while (rs.next()) {
+                  
+                datos[0] = rs.getString(1);
+                datos[1] = rs.getString(2);
+                datos[2] = rs.getString(3);
+                datos[3] = rs.getString(4);
+                datos[4] = rs.getString(5);
+                datos[5] = rs.getString(6);
+                datos[6] = rs.getString(7);
+                datos[7] = rs.getString(8);
+                datos[8] = rs.getString(9);
+                datos[9] = rs.getString(10);
+                datos[10] = rs.getString(11);
+                datos[11] = rs.getString(12);
+                datos[12] = rs.getString(13);
+
+                modelo.addRow(datos);
+                
+              }
+              
+                           
+       } catch( SQLException ex ) {
+           
+            JOptionPane.showMessageDialog(null, "No se encontro los registros, error: " + ex.toString());
+           }
+        }
+} 

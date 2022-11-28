@@ -5,11 +5,16 @@
 package siprocafe;
 
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.*;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 import siprocafe.Personal;
 import siprocafe.conexion;
+import java.sql.CallableStatement;
 /**
  *
  * @author USER
@@ -22,8 +27,14 @@ public class frm_personal1 extends javax.swing.JFrame {
     public frm_personal1() {
         initComponents();
         
+        setLocationRelativeTo(null);
+        //estabelezcon conección con mi bd
+        
+        conexion objetoconexion = new conexion();
+        objetoconexion.conectar();
+        
         Personal objetoPersonas = new Personal();
-//     objetoPersonas.MostrarPersonas(tbtotalpersonas);
+        objetoPersonas.MostrarPersonas(tbtotalpersonas);
     }
 
     /**
@@ -64,12 +75,13 @@ public class frm_personal1 extends javax.swing.JFrame {
         TexFechanac = new javax.swing.JTextField();
         TexFEcharet = new javax.swing.JTextField();
         jComboBoxestado = new javax.swing.JComboBox<>();
-        jBmodificar1 = new javax.swing.JButton();
+        Actualizar = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
         texeps = new javax.swing.JTextField();
         jBsalir = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbtotalpersonas = new javax.swing.JTable();
+        Consulta = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -82,7 +94,7 @@ public class frm_personal1 extends javax.swing.JFrame {
         jLabel1.setText("Personal");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, 100, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 49));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 49));
 
         jPanel2.setBackground(new java.awt.Color(153, 255, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -152,7 +164,7 @@ public class frm_personal1 extends javax.swing.JFrame {
                 texidpActionPerformed(evt);
             }
         });
-        jPanel2.add(texidp, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 160, 20));
+        jPanel2.add(texidp, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 170, 20));
 
         texdirec.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,7 +224,7 @@ public class frm_personal1 extends javax.swing.JFrame {
                 jBguardar1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jBguardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, -1, -1));
+        jPanel2.add(jBguardar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, -1, -1));
 
         jBeliminar.setBackground(new java.awt.Color(0, 153, 153));
         jBeliminar.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
@@ -223,7 +235,7 @@ public class frm_personal1 extends javax.swing.JFrame {
                 jBeliminarActionPerformed(evt);
             }
         });
-        jPanel2.add(jBeliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 290, -1, -1));
+        jPanel2.add(jBeliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, -1, -1));
         jPanel2.add(TexFechaing, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 171, -1));
 
         TexFechanac.addActionListener(new java.awt.event.ActionListener() {
@@ -242,16 +254,16 @@ public class frm_personal1 extends javax.swing.JFrame {
         });
         jPanel2.add(jComboBoxestado, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, 163, -1));
 
-        jBmodificar1.setBackground(new java.awt.Color(0, 153, 153));
-        jBmodificar1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jBmodificar1.setText("Actualizar");
-        jBmodificar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jBmodificar1.addActionListener(new java.awt.event.ActionListener() {
+        Actualizar.setBackground(new java.awt.Color(0, 153, 153));
+        Actualizar.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        Actualizar.setText("Actualizar");
+        Actualizar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Actualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBmodificar1ActionPerformed(evt);
+                ActualizarActionPerformed(evt);
             }
         });
-        jPanel2.add(jBmodificar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, -1, -1));
+        jPanel2.add(Actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
 
         jLabel20.setBackground(new java.awt.Color(204, 204, 204));
         jLabel20.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -285,11 +297,27 @@ public class frm_personal1 extends javax.swing.JFrame {
 
             }
         ));
+        tbtotalpersonas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbtotalpersonasMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(tbtotalpersonas);
 
-        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 347, 620, 170));
+        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 347, 740, 170));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 43, 620, 520));
+        Consulta.setBackground(new java.awt.Color(0, 153, 153));
+        Consulta.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        Consulta.setText("Consulta");
+        Consulta.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Consulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Consulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 43, 740, 520));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -337,7 +365,7 @@ public class frm_personal1 extends javax.swing.JFrame {
     private void jBeliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarActionPerformed
         // TODO add your handling code here:
         Personal objetoPersonas=new Personal();
-        objetoPersonas.EliminarPersonas(texidp);
+        objetoPersonas.EliminarPersonas(tbtotalpersonas, texidp);
         /*Actualiza los datos y muestra*/
         objetoPersonas.MostrarPersonas(tbtotalpersonas);
     }//GEN-LAST:event_jBeliminarActionPerformed
@@ -350,15 +378,15 @@ public class frm_personal1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxestadoActionPerformed
 
-    private void jBmodificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBmodificar1ActionPerformed
+    private void ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarActionPerformed
         // TODO add your handling code here:
         Personal objetoPersonas=new Personal();
-        objetoPersonas.MostrarPersonas(tbtotalpersonas);
-        objetoPersonas.ModificarPersonas(texnombre, texidp, texapellido, TexFechanac, TexFechaing, TexFEcharet, texdirec, texemail, texcel, texeps, texarls, jComboBoxestado, texcargo);
+        objetoPersonas.ActualizarPersonas(tbtotalpersonas, texnombre, texidp, texapellido, TexFechanac, TexFechaing, TexFEcharet, texdirec, texemail, texcel, texeps, texarls, jComboBoxestado, texcargo);
+        
         /*Actualiza los datos y muestra*/
         objetoPersonas.MostrarPersonas(tbtotalpersonas);
 
-    }//GEN-LAST:event_jBmodificar1ActionPerformed
+    }//GEN-LAST:event_ActualizarActionPerformed
 
     private void texepsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texepsActionPerformed
         // TODO add your handling code here:
@@ -375,6 +403,22 @@ public class frm_personal1 extends javax.swing.JFrame {
     private void texidpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texidpActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_texidpActionPerformed
+
+    private void tbtotalpersonasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbtotalpersonasMouseClicked
+        Personal objetoPersonas=new Personal();
+        objetoPersonas.Seleccionarpersona(tbtotalpersonas, texidp, texnombre, texapellido, TexFechanac, TexFechaing, TexFEcharet, texdirec, texemail, texcel, texeps, texarls, jComboBoxestado, texcargo);
+        
+    }//GEN-LAST:event_tbtotalpersonasMouseClicked
+
+    private void ConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultaActionPerformed
+        
+           
+       frm_Consulta formulario1=new frm_Consulta();
+        formulario1.setVisible(true);
+         this.setVisible(false);
+        
+                
+    }//GEN-LAST:event_ConsultaActionPerformed
 /**|
      * @param args the command line arguments
      */
@@ -412,12 +456,13 @@ public class frm_personal1 extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Actualizar;
+    private javax.swing.JButton Consulta;
     private javax.swing.JTextField TexFEcharet;
     private javax.swing.JTextField TexFechaing;
     private javax.swing.JTextField TexFechanac;
     private javax.swing.JButton jBeliminar;
     private javax.swing.JButton jBguardar1;
-    private javax.swing.JButton jBmodificar1;
     private javax.swing.JButton jBsalir;
     private javax.swing.JComboBox<String> jComboBoxestado;
     private javax.swing.JLabel jL;

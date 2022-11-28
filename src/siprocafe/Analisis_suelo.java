@@ -27,7 +27,9 @@ import java.util.Calendar;
 import javax.swing.JComboBox;
 
 public class Analisis_suelo {
-     /*Se definen las variables para manejo de los datos*/
+    
+    /*Se definen las variables para manejo de los datos*/
+    
     String Fecha_Reporte;
     String Determinaciòn;
     String Resultado;
@@ -40,52 +42,42 @@ public class Analisis_suelo {
     String Fecha_muestra;
     String Fecha_analisis;
     int Id_analisis_suelo;
+    int Id_bloque;
 
     /**
      * Area Getters y Setters Get: obtiene el valor Set: incorpora el valor
      *
      */
-    public String getFecha_muestra(String Fecha_muestra) {
-        return Fecha_muestra;
+    public int getId_bloque() {
+        return Id_bloque;
     }
 
-    public void setFecha_nacimiento(String Fecha_nacimiento) {
-        this.Fecha_muestra = Fecha_nacimiento;
+    public void setId_bloque(int Id_bloque) {
+        this.Id_bloque = Id_bloque;
     }
 
-    public String getFecha_ingreso(String Fecha_analisis) {
-        return Fecha_analisis;
-    }
-
-    public void setFecha_ingreso(String Fecha_analisis) {
-        this.Fecha_analisis = Fecha_analisis;
-    }
-
-    public String getFecha_Reporte() {
-        return Fecha_Reporte;
-    }
-
-    public void setFecha_reporte(String Fecha_reporte) {
-        this.Fecha_Reporte = Fecha_reporte;
-    }
-
-    public int getId_analisis_suelo(int Id_analisis_suelo) {
-        return Id_analisis_suelo;
-    }
-
-    public void setanalisis_suelo(int Id_analisis_suelo) {
+    public void setId_analisis_suelo(int Id_analisis_suelo) {
         this.Id_analisis_suelo = Id_analisis_suelo;
     }
 
-    public String getdeterminacion() {
+    public String getFecha_Reporte() {
+
+        return Fecha_Reporte;
+    }
+
+    public void setFecha_Reporte(String Fecha_Reporte) {
+        this.Fecha_Reporte = Fecha_Reporte;
+    }
+
+    public String getDeterminaciòn() {
         return Determinaciòn;
     }
 
-    public void setdeterminacion(String determinacion) {
-        this.Determinaciòn = determinacion;
+    public void setDeterminaciòn(String Determinaciòn) {
+        this.Determinaciòn = Determinaciòn;
     }
 
-    public String getresultado() {
+    public String getResultado() {
         return Resultado;
     }
 
@@ -93,12 +85,12 @@ public class Analisis_suelo {
         this.Resultado = Resultado;
     }
 
-    public String getRecomendacion() {
+    public String getRecomendaciòn() {
         return Recomendaciòn;
     }
 
-    public void setRecomendacion(String Recomenacion) {
-        this.Recomendaciòn = Recomenacion;
+    public void setRecomendaciòn(String Recomendaciòn) {
+        this.Recomendaciòn = Recomendaciòn;
     }
 
     public String getEdad_cultivo() {
@@ -109,12 +101,12 @@ public class Analisis_suelo {
         this.Edad_cultivo = Edad_cultivo;
     }
 
-    public String getI_producto() {
+    public String getI_prodcuto() {
         return I_prodcuto;
     }
 
-    public void setI_producto(String I_producto) {
-        this.I_prodcuto = I_producto;
+    public void setI_prodcuto(String I_prodcuto) {
+        this.I_prodcuto = I_prodcuto;
     }
 
     public String getId_personal() {
@@ -133,59 +125,85 @@ public class Analisis_suelo {
         this.Metodo = Metodo;
     }
 
-    public String getRango_adeciado() {
+    public String getRango_Adeciado() {
         return Rango_Adeciado;
     }
 
-    public void setRango_adeciado(String Rango_adeciado) {
-        this.Rango_Adeciado = Rango_adeciado;
+    public void setRango_Adeciado(String Rango_Adeciado) {
+        this.Rango_Adeciado = Rango_Adeciado;
     }
 
-    public void InsertarPersonas(JTextField texidelem_dot, JTextField texid_producto, JTextField texid_personal, JTextField texid_personal1, JTextField texid_personal2, JTextField texid_personal3,
-            JTextField texfecdevo2, JTextField texfecdevo1, JTextField texfecdevo, JTextField texfecdevo4, JTextField texfecdevo3) {
+    public String getFecha_muestra() {
+        return Fecha_muestra;
+    }
+
+    public void setFecha_muestra(String Fecha_muestra) {
+        this.Fecha_muestra = Fecha_muestra;
+    }
+
+    public String getFecha_analisis() {
+        return Fecha_analisis;
+    }
+
+    public void setFecha_analisis(String Fecha_analisis) {
+        this.Fecha_analisis = Fecha_analisis;
+    }
+
+    public int getId_analisis_suelo() {
+        return Id_analisis_suelo;
+    }
+
+    public void InsertarPersonas(JTextField texidanalsuel, JTextField texidbloque, JTextField texFechamuestra, JTextField texfechaanaliss, JTextField texfecharep, JTextField Determi, JTextField texresult, JTextField texrecomen, JTextField texedadculti, JTextField texidproduct, JTextField texidpersonal, JTextField texmetodo, JTextField textrangAdec) {
 
         /*Se incorporan los valores de los controles*/
         
-        
-//        setId_analisis_suelo;Integer.parseInt(texidelem_dot.getText()));
-//        
-//        setfecha_muestra(texid_producto.getText());
-//        setfecha_analisis(texid_personal.getText());
-//        setFecha_reporte(texid_personal1.getText());
-//        setdeterminacion(texid_personal2.getText());
-//        setResultado(texid_personal3.getText());
-//        setEdad_cultivo(texfecdevo2.getText());
-//        setI_producto(texfecdevo1.getText());
-//        setId_personal(texfecdevo.getText());
-//        setMetodo(texfecdevo4.getText());
-//        setRango_adeciado(texfecdevo3.getText());
+        setId_analisis_suelo(Integer.parseInt(texidanalsuel.getText()));
+        setId_bloque(Integer.parseInt(texidbloque.getText()));
+        setFecha_muestra(texFechamuestra.getText());
+        setFecha_analisis(texfechaanaliss.getText());
+        setFecha_Reporte(texfecharep.getText());
+        setEdad_cultivo(texedadculti.getText());
+        setDeterminaciòn(Determi.getText());
+        setMetodo(texmetodo.getText());
+        setI_prodcuto(texidproduct.getText());
+        setId_personal(texidpersonal.getText());
+        setResultado(texresult.getText());
+        setRango_Adeciado(textrangAdec.getText());
+        setRecomendaciòn(texrecomen.getText());
 
-//          Se crea objeto de tipo conexion  
+//          Se crea objeto de tipo conexion
+
         conexion objetoconexion = new conexion();
 
         /*Se crea una consulta para insertar los datos*/
-        String consulta = "INSERT INTO Personal ( Id_Personal, Nombre, Apellido,Fecha_nacimiento,Fecha_ingreso,Dirección,Email, Fecha_retiro, celular,Eps,Arls,Estado) values (?,?,?,?,?,?,?,?,?,?,?,?)";
+        
+        String consulta = "INSERT INTO `analisis_suelo`(`Id_Analisis_suelo`, `Id_bloque`, "
+                + "`Fecha_muestra`, `Fecha_analisis`, `Fecha_report`, `Edad_cultivo`, `Determinaciòn`, `Metodo`, "
+                + "`Id_producto`, `Id_Personal`, `Resultado`, `Rango_adecuado`, `REcomendación`) "
+                + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
         try {
             /*Se enlaza la conexion con la consulta anterior*/
+            
             CallableStatement cs;
             cs = objetoconexion.conectar().prepareCall(consulta);
 
             /*Se incorporan los parámetros*/
-             
-//            cs.setInt(1, getId_analisis_suelo(Id_analisis_suelo));
-//            cs.setString(2, getFecha_muestra(Fecha_muestra));
-//            cs.setString(3, getFecha_analisis());
-//            cs.setString(4, getFecha_Reporte());
-//            cs.setString(5, getdeterminacion());
-//            cs.setString(6, getresultado());
-//            cs.setString(7, getEdad_cultivo());
-//            cs.setString(8, getI_producto());
-//            cs.setString(9, getId_personal());
-//            cs.setString(10, getMetodo());
-//            cs.setString(11, getRango_adeciado());
-//
-//            cs.executeUpdate();
+            cs.setInt(1, getId_analisis_suelo());
+            cs.setInt(2, getId_bloque());
+            cs.setString(3, getFecha_muestra());
+            cs.setString(4, getFecha_analisis());
+            cs.setString(5, getFecha_Reporte());
+            cs.setString(6, getEdad_cultivo());
+            cs.setString(7, getDeterminaciòn());
+            cs.setString(8, getMetodo());
+            cs.setString(9, getI_prodcuto());
+            cs.setString(10, getId_personal());
+            cs.setString(11, getResultado());
+            cs.setString(12, getRango_Adeciado());
+            cs.setString(13, getRecomendaciòn());
+
+            cs.executeUpdate();
 
             JOptionPane.showMessageDialog(null, "Se insertó correctamente la información");
 
@@ -194,38 +212,42 @@ public class Analisis_suelo {
         }
     }
 
-        
     public void MostrarPersonas(JTable tbtotalpersonas) {
 
         /*Se crea un modelo de tabla*/
         conexion objetoconexion = new conexion();
+
         DefaultTableModel modelo = new DefaultTableModel();
 
         /*Ordenar tabla*/
+        
         TableRowSorter<TableModel> OrdenarTabla = new TableRowSorter<TableModel>(modelo);
         tbtotalpersonas.setRowSorter(OrdenarTabla);
 
         String sql = " ";
 
         /*Se crean los encabezados de las columnas*/
+        
         modelo.addColumn("Id_analisis_suelo");
+        modelo.addColumn("Id_bloque");
         modelo.addColumn("fecha_muestra");
         modelo.addColumn("fecha_analisis");
         modelo.addColumn("Fecha_reporte");
-        modelo.addColumn("determinacion");
-        modelo.addColumn("resultado");
         modelo.addColumn("edad_cultivo");
+        modelo.addColumn("determinacion");
+        modelo.addColumn("metodo");
         modelo.addColumn("I_producto");
         modelo.addColumn("Id_personalr");
-        modelo.addColumn("metodo");
+        modelo.addColumn("resultado");
         modelo.addColumn("rango_adeciado");
+        modelo.addColumn("REcomendacion");
 
         tbtotalpersonas.setModel(modelo);
 
-        sql = "select * from personal;";
-        /*Se crea un arreglo*/
+        sql = "SELECT * FROM `analisis_suelo`;";
 
-        String[] datos = new String[12];
+        /*Se crea un arreglo*/
+        String[] datos = new String[13];
 
         Statement st;
 
@@ -234,7 +256,9 @@ public class Analisis_suelo {
             ResultSet rs = st.executeQuery(sql);
 
             /*Se recorre el arreglo*/
+            
             while (rs.next()) {
+                
                 datos[0] = rs.getString(1);
                 datos[1] = rs.getString(2);
                 datos[2] = rs.getString(3);
@@ -246,13 +270,15 @@ public class Analisis_suelo {
                 datos[8] = rs.getString(9);
                 datos[9] = rs.getString(10);
                 datos[10] = rs.getString(11);
+                datos[11] = rs.getString(12);
+                datos[12] = rs.getString(13);
 
                 modelo.addRow(datos);
 
             }
 
             tbtotalpersonas.setModel(modelo);
-           
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "No se pudo mostrar los registros, error: " + e.toString());
 
@@ -261,25 +287,26 @@ public class Analisis_suelo {
     }
 
     /*Función para seleccionar un registro */
-    public void Seleccionarpersona(JTable tbtotalpersonas,JTextField texidelem_dot, JTextField texid_producto, JTextField texid_personal, JTextField texid_personal1, JTextField texid_personal2, JTextField texid_personal3,
-            JTextField texfecdevo2, JTextField texfecdevo1, JTextField texfecdevo, JTextField texfecdevo4, JTextField texfecdevo3) {
+    public void Seleccionarpersona(JTable tbtotalpersonas, JTextField texidanalsuel, JTextField texidbloque, JTextField texFechamuestra, JTextField texfechaanaliss, JTextField texfecharep, JTextField Determi, JTextField texresult, JTextField texrecomen, JTextField texedadculti, JTextField texidproduct, JTextField texidpersonal, JTextField texmetodo, JTextField textrangAdec) {
 
         try {
             int fila = tbtotalpersonas.getSelectedRow();
 
             if (fila >= 0) {
 
-                texidelem_dot.setText((tbtotalpersonas.getValueAt(fila, 1).toString()));
-                texid_producto.setText((tbtotalpersonas.getValueAt(fila, 2).toString()));
-                texid_personal.setText((tbtotalpersonas.getValueAt(fila, 3).toString()));
-                texid_personal1.setText((tbtotalpersonas).getValueAt(fila,4).toString()) ;
-                texid_personal2.setText((tbtotalpersonas).getValueAt(fila,5).toString()) ;
-                texid_personal3.setText((tbtotalpersonas.getValueAt(fila, 6).toString()));
-                texfecdevo2.setText((tbtotalpersonas.getValueAt(fila, 7).toString()));
-                texfecdevo1.setText((tbtotalpersonas.getValueAt(fila, 8).toString()));
-                texfecdevo.setText((tbtotalpersonas.getValueAt(fila, 9).toString()));
-                texfecdevo4.setText((tbtotalpersonas.getValueAt(fila, 10).toString()));
-                texfecdevo3.setText((tbtotalpersonas.getValueAt(fila, 11).toString()));
+                texidanalsuel.setText((tbtotalpersonas.getValueAt(fila, 1).toString()));
+                texidbloque.setText((tbtotalpersonas.getValueAt(fila, 2).toString()));
+                texFechamuestra.setText((tbtotalpersonas.getValueAt(fila, 3).toString()));
+                texfechaanaliss.setText((tbtotalpersonas.getValueAt(fila, 4).toString()));
+                texfecharep.setText((tbtotalpersonas).getValueAt(fila, 5).toString());
+                texedadculti.setText((tbtotalpersonas.getValueAt(fila, 8).toString()));
+                Determi.setText((tbtotalpersonas).getValueAt(fila, 6).toString());
+                texmetodo.setText((tbtotalpersonas.getValueAt(fila, 11).toString()));
+                texidproduct.setText((tbtotalpersonas.getValueAt(fila, 9).toString()));
+                texidpersonal.setText((tbtotalpersonas.getValueAt(fila, 10).toString()));
+                texresult.setText((tbtotalpersonas.getValueAt(fila, 7).toString()));
+                textrangAdec.setText((tbtotalpersonas.getValueAt(fila, 12).toString()));
+                texrecomen.setText(tbtotalpersonas.getValueAt(fila, 13).toString());
 
             } else {
                 JOptionPane.showMessageDialog(null, "Fila no seleccionada");
@@ -292,79 +319,85 @@ public class Analisis_suelo {
     }
 
     /*Función para modificar los datos de persona*/
-    
-    public void ModificarPersonas(JTextField texidelem_dot, JTextField texid_producto, JTextField texid_personal, JTextField texid_personal1, JTextField texid_personal2, JTextField texid_personal3,
-            JTextField texfecdevo2, JTextField texfecdevo1, JTextField texfecdevo, JTextField texfecdevo4, JTextField texfecdevo3) {
-               
+    public void ModificarPersonas(JTextField texidanalsuel, JTextField texFechamuestra, JTextField texidbloque, JTextField texfechaanaliss, JTextField texfecharep, JTextField Determi, JTextField texresult, JTextField texrecomen, JTextField texedadculti, JTextField texidproduct, JTextField texidpersonal, JTextField texmetodo, JTextField textrangAdec) {
+
         /*Convierte de texto a int*/
-         
-//        setInteger.parseInt(texidelem_dot.getText()));
-//
-//        /*Toma los valores de texto*/
-//        setfecha_muestra(texid_producto.getText());
-//        setfecha_analisis(texid_personal.getText());
-//        setFecha_reporte(texid_personal1.getText());
-//        setdeterminacion(texid_personal2.getText());
-//        setResultado(texid_personal3.getText());
-//        setEdad_cultivo(texfecdevo2.getText());
-//        setI_producto(texfecdevo1.getText());
-//        setId_personal(texfecdevo.getText());
-//        setMetodo(texfecdevo4.getText());
-//        setRango_adeciado(texfecdevo3.getText());
-//
-//        conexion objetoconexion = new conexion();
-//
-//        String consulta = "UPDATE Personal SET personal.Nombre = ?, personal.Apellido =?,personal.Fecha_nacimiento =?,personal.Fecha_nacimiento,personal.Fecha_ingreso personal.Dirección =?, personal.Email =?,personal.Fecha_retiro,personal.celular =?,personal.Eps =?,personal.Arls =?,personal.Estado =? WHERE personal.Id_Personal =?;";
-////        
-//        try{
-////            
-//            CallableStatement cs = objetoconexion.conectar().prepareCall(consulta);
-//  
-//            cs.setInt(1, getId_analisis_suelo(Id_analisis_suelo));
-//            cs.setString(2, getFecha_muestra(Fecha_muestra));
-//            cs.setString(3, getFecha_ingreso(Fecha_analisis));
-//            cs.setString(4, getFecha_Reporte());
-//            cs.setString(5, getdeterminacion());
-//            cs.setString(6, getresultado());
-//            cs.setString(7, getEdad_cultivo());
-//            cs.setString(8, getI_producto());
-//            cs.setString(9, getId_personal());
-//            cs.setString(10, getMetodo());
-//            cs.setString(11, getRango_adeciado());
-//
-//            cs.execute();
-//
-//            JOptionPane.showMessageDialog(null, "Modificación exitosa");
+        setId_analisis_suelo(Integer.parseInt(texidanalsuel.getText()));
+
+        /*Toma los valores de texto*/
+        setId_bloque(Integer.parseInt(texidbloque.getText()));
+        setFecha_muestra(texFechamuestra.getText());
+        setFecha_analisis(texfechaanaliss.getText());
+        setFecha_Reporte(texfecharep.getText());
+        setEdad_cultivo(texedadculti.getText());
+        setDeterminaciòn(Determi.getText());
+        setMetodo(texmetodo.getText());
+        setI_prodcuto(texidproduct.getText());
+        setId_personal(texidpersonal.getText());
+        setResultado(texresult.getText());
+        setRango_Adeciado(textrangAdec.getText());
+        setRecomendaciòn(texrecomen.getText());
+        
+
+        conexion objetoconexion = new conexion();
+
+        String consulta = "UPDATE `analisis_suelo` SET `Id_bloque`='?',"
+                + "`Fecha_muestra`='?',`Fecha_analisis`='?',`Fecha_report`='?',"
+                + "`Edad_cultivo`='?',`Determinaciòn`='?',`Metodo`='?',`Id_producto`='?',"
+                + "`Id_Personal`='?',`Resultado`='?',`Rango_adecuado`='?',"
+                + "`REcomendación`='?' WHERE analisis_suelo.Id_Analisis_suelo`='?'";
+//        
+        try {
 //            
-//            } catch (SQLException e) {
-//            
-//            JOptionPane.showMessageDialog(null, "No se modificó, error:" + e.toString());
-//        }
-//        
-//    }
-//
-//    public void EliminarPersonas(JTextField texidp) {
-//        
-//        /*Convertir la cadena a Integer*/
-//        
-//        setId_analisis_suelo Integer.parseInt(texidp.getText()));
-//
-//        conexion objetoconexion = new conexion();
-//
-//        String consulta = "DELETE FROM personal WHERE personal.Id_personal=?;";
-//
-//        try {
-//            CallableStatement cs = objetoconexion.conectar().prepareCall(consulta);
-//            cs.setInt(1, getId_analisis_suelo());
-//            cs.execute();
-//
-//            JOptionPane.showMessageDialog(null, "Se eliminó correctamente la Persona");
-//
-//        } catch (SQLException e) {
-//
-//            JOptionPane.showMessageDialog(null, "No se pudo eliminar, error: " + e.toString());
-//        }
-//
-//    }  
-}
+            CallableStatement cs = objetoconexion.conectar().prepareCall(consulta);
+
+            
+            cs.setInt(1, getId_bloque());
+            cs.setString(2, getFecha_muestra());
+            cs.setString(3, getFecha_analisis());
+            cs.setString(4, getFecha_Reporte());
+            cs.setString(5, getEdad_cultivo());
+            cs.setString(6, getDeterminaciòn());
+            cs.setString(7, getMetodo());
+            cs.setString(8, getI_prodcuto());
+            cs.setString(9, getId_personal());
+            cs.setString(10, getResultado());
+            cs.setString(11, getRango_Adeciado());
+            cs.setString(12, getRecomendaciòn());
+            cs.setInt(13, getId_analisis_suelo());
+
+            cs.execute();
+
+            JOptionPane.showMessageDialog(null, "Modificación exitosa");
+
+        } catch (SQLException e) {
+
+            JOptionPane.showMessageDialog(null, "No se modificó, error:" + e.toString());
+        }
+
+    }
+
+    public void EliminarPersonas(JTextField texidanalsuel) {
+
+        /*Convertir la cadena a Integer*/
+        setId_analisis_suelo(Integer.parseInt(texidanalsuel.getText()));
+
+        conexion objetoconexion = new conexion();
+
+        String consulta = "DELETE FROM `analisis_suelo` WHERE `Id_Analisis_suelo`='?' ;";
+
+        try {
+
+            CallableStatement cs = objetoconexion.conectar().prepareCall(consulta);
+            cs.setInt(1, getId_analisis_suelo());
+            cs.execute();
+
+            JOptionPane.showMessageDialog(null, "Se eliminó correctamente la Persona");
+
+        } catch (SQLException e) {
+
+            JOptionPane.showMessageDialog(null, "No se pudo eliminar, error: " + e.toString());
+        }
+
+    }  
 }

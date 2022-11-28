@@ -37,15 +37,17 @@ public class frm_registrousuario extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
-        JCRol = new javax.swing.JComboBox<>();
-        jTextField4 = new javax.swing.JTextField();
-        txtId_personal = new javax.swing.JTextField();
+        txtId_usuario = new javax.swing.JTextField();
         jTpossword = new javax.swing.JTextField();
         txtusuario = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         salir = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jTextField6 = new javax.swing.JTextField();
+        txtId_personal1 = new javax.swing.JTextField();
+        jTextFieldrol = new javax.swing.JTextField();
+        JCRol = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,7 +85,7 @@ public class frm_registrousuario extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 51, 0));
         jLabel2.setText("Registro de Usuarios");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, -6, 500, 50));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 500, 50));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 54, 500, 40));
 
@@ -91,14 +93,14 @@ public class frm_registrousuario extends javax.swing.JFrame {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jTextField3.setText("Id_personal");
+        jTextField3.setText("Id_usuario");
         jTextField3.setBorder(null);
-        jPanel4.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 20, 80, -1));
+        jPanel4.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 80, -1));
 
         jTextField1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jTextField1.setText("Usuario");
         jTextField1.setBorder(null);
-        jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 65, 80, -1));
+        jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 80, -1));
 
         jTextField5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jTextField5.setText("Contraseña");
@@ -108,41 +110,28 @@ public class frm_registrousuario extends javax.swing.JFrame {
                 jTextField5ActionPerformed(evt);
             }
         });
-        jPanel4.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 110, 80, -1));
+        jPanel4.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 80, -1));
 
-        JCRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador Sistema", "Administrador", "Usuario", " " }));
-        JCRol.addActionListener(new java.awt.event.ActionListener() {
+        txtId_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JCRolActionPerformed(evt);
+                txtId_usuarioActionPerformed(evt);
             }
         });
-        jPanel4.add(JCRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
-
-        jTextField4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jTextField4.setText("Rol");
-        jTextField4.setBorder(null);
-        jPanel4.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 146, 80, -1));
-
-        txtId_personal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtId_personalActionPerformed(evt);
-            }
-        });
-        jPanel4.add(txtId_personal, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 15, 149, -1));
+        jPanel4.add(txtId_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 149, -1));
 
         jTpossword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTposswordActionPerformed(evt);
             }
         });
-        jPanel4.add(jTpossword, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 105, 149, -1));
+        jPanel4.add(jTpossword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 149, -1));
 
         txtusuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtusuarioActionPerformed(evt);
             }
         });
-        jPanel4.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 60, 149, -1));
+        jPanel4.add(txtusuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 149, -1));
 
         jButton4.setBackground(new java.awt.Color(0, 153, 153));
         jButton4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -184,7 +173,32 @@ public class frm_registrousuario extends javax.swing.JFrame {
         });
         jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 110, -1));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 91, 500, 210));
+        jTextField6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jTextField6.setText("Id_personal");
+        jTextField6.setBorder(null);
+        jPanel4.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 20, 80, -1));
+
+        txtId_personal1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtId_personal1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtId_personal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 15, 149, -1));
+
+        jTextFieldrol.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jTextFieldrol.setText("Rol");
+        jTextFieldrol.setBorder(null);
+        jPanel4.add(jTextFieldrol, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 80, -1));
+
+        JCRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador Sistema", "Administrador", "Usuario", " " }));
+        JCRol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCRolActionPerformed(evt);
+            }
+        });
+        jPanel4.add(JCRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 91, 500, 220));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -194,9 +208,7 @@ public class frm_registrousuario extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 4, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -206,13 +218,9 @@ public class frm_registrousuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
-    private void JCRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCRolActionPerformed
+    private void txtId_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtId_usuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JCRolActionPerformed
-
-    private void txtId_personalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtId_personalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtId_personalActionPerformed
+    }//GEN-LAST:event_txtId_usuarioActionPerformed
 
     private void jTposswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTposswordActionPerformed
         // TODO add your handling code here:
@@ -225,14 +233,14 @@ public class frm_registrousuario extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
        
         Login objetolog=new Login();
-        objetolog.Modificarusuario(txtId_personal, txtusuario, jTpossword, JCRol);
+        objetolog.Modificarusuario(txtId_personal1, txtusuario, jTpossword, JCRol);
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
          
         Login objetolog=new Login();
-        objetolog.InsertarUsuario(txtId_personal, txtusuario, jTpossword, JCRol);
+        objetolog.InsertarUsuario(txtId_personal1, txtId_usuario, txtusuario, jTpossword, JCRol);
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -247,6 +255,14 @@ public class frm_registrousuario extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void txtId_personal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtId_personal1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtId_personal1ActionPerformed
+
+    private void JCRolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCRolActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JCRolActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,11 +312,13 @@ public class frm_registrousuario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextFieldrol;
     private javax.swing.JTextField jTpossword;
     private javax.swing.JButton salir;
-    private javax.swing.JTextField txtId_personal;
+    private javax.swing.JTextField txtId_personal1;
+    private javax.swing.JTextField txtId_usuario;
     private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 }

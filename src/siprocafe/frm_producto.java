@@ -123,8 +123,8 @@ public class frm_producto extends javax.swing.JFrame {
                 texfecha_de_recoleccionActionPerformed(evt);
             }
         });
-        jPanel2.add(texfecha_de_recoleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 87, -1));
-        jPanel2.add(texfecha_de_ingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 87, -1));
+        jPanel2.add(texfecha_de_recoleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 120, -1));
+        jPanel2.add(texfecha_de_ingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 120, -1));
 
         jLabel15.setBackground(new java.awt.Color(255, 255, 255));
         jLabel15.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -185,14 +185,14 @@ public class frm_producto extends javax.swing.JFrame {
                 textiempo_inicial_lavadoActionPerformed(evt);
             }
         });
-        jPanel2.add(textiempo_inicial_lavado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 87, -1));
+        jPanel2.add(textiempo_inicial_lavado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 120, -1));
 
         texfecha_de_lavado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 texfecha_de_lavadoActionPerformed(evt);
             }
         });
-        jPanel2.add(texfecha_de_lavado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 87, -1));
+        jPanel2.add(texfecha_de_lavado, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 120, -1));
 
         texcantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -328,7 +328,7 @@ public class frm_producto extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
             .addComponent(jSPelemdot)
         );
         layout.setVerticalGroup(
@@ -338,7 +338,7 @@ public class frm_producto extends javax.swing.JFrame {
                 .addGap(2, 2, 2)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSPelemdot, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                .addComponent(jSPelemdot, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
